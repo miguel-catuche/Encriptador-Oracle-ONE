@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/effects.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <script src="../js/main.js" defer></script>
+    <title>Proyecto-Encripator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="error-Message">
+            <div class="error-content">
+                <div class="error-img">
+                    <img src="../images/exclamation-icon.svg" alt="img-error">
+                </div>
+                <div class="error-text">
+                    <h2>¡OOPS!</h2>
+                    <p>Por favor, ingresa contenido para continuar.</p>
+                </div>
+                <div class="btn-error">
+                    <button class="btn-4" type="button" onclick="cerrar()">Ok</button>
+                </div>
+            </div>
+            <!-- <div class="background-container"></div> -->
+        </div>
+        <div class="tools">
+            <img src="../images/logo-alura.svg" alt="logo">
+        </div>
+        <form class="input-Text">
+            <div class="write-text">
+                <h2>Encriptador</h2>
+                <textarea name="toEncript" id="toEncript" class="entrada-texto" placeholder="Ingrese el texto aqui"></textarea>
+            </div>
+            <div class="other-content">
+                <div class="user-message">
+                    <div class="message">
+                        <img src="../images/exclamation-icon.svg" alt="exc-icon">
+                        <p>Solo letras minúsculas y sin acentos</p>
+                    </div>
+                </div>
+                <div class="submit-buttons">
+                    <!-- <input class="btn-1 btns" type="button" value="Encriptar"> -->
+                    <button class="btn-1 btns" type="button" onclick="encriptar()">Encriptar</button>
+                    <button class="btn-2 btns" type="button" onclick="desencriptar()">Desencriptar</button>
+                    <!-- <input class="btn-2 btns" type="button" value="Desencriptar"> -->
+                </div>
+            </div>
+        </form>
+        <div class="clipboard">
+            <div class="results">
+                <textarea id="resultado" readonly></textarea>
+            </div>
+            <div class="copy-button">
+                <div class="copiado">
+                    <p class="copied">¡Copiado!</p>
+                </div>
+                <button class="btn-3" type="button" onclick="copiar()">Copiar</button>
+                <!-- <input class="btn-3" type="button" value="Copiar"> -->
+                
+            </div>
+            <div class="cb-image">
+                <img src="../images/muñeco-alura.svg" alt="muñeco">
+            </div>
+            <div class="cb-text">
+                <h2>Ningún mensaje fue encontrado</h2>
+                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

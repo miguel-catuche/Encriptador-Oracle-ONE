@@ -1,0 +1,8 @@
+/* H O V E R */
+.container .input-Text .submit-buttons .btns:hover{
+    box-shadow: 0 4px #00000027;
+}
+.container .input-Text .write-text .entrada-texto:focus{
+    border-bottom: 1px solid #0A3871;
+}
+/* F I N -- H O V E R  */

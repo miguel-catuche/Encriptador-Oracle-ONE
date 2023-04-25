@@ -1,0 +1,286 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+    font-family: sans-serif;
+}
+body{
+    background: #F3F5FC;
+}
+.container{
+    display: grid;
+    grid-template-columns: 120px auto 400px 10px;
+    grid-template-rows: auto;
+    gap: 20px;
+    height: 100vh;
+    width: 98vw;
+}
+.container .tools{
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    margin-top: 20px;
+    justify-self: center;
+}
+.container .tools > img{
+    height: 32px;
+    width: 48px;
+}
+.container .input-Text{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 1/-1;
+    grid-template-rows: 400px 300px;
+    grid-template-columns: 1fr;
+    /* margin-left: 30px; */
+}
+.container .input-Text .write-text{
+    /* margin-top: 100px; */
+    align-self: flex-start;
+    color: #0A3871;
+    margin: 5px 10px 10px 10px;
+}
+.container .input-Text .write-text h2{
+    margin-bottom: 0;
+}
+.container .input-Text .write-text .entrada-texto{
+    background: transparent;
+    width: 100%;
+    height: 335px;
+    /* border: 1px solid #000; */
+    text-align: start;
+    outline: none;
+    resize: none;
+    font-size: 20px;
+    color: #0A3871;
+    padding: 20px 15px 15px 15px;
+}
+.container .input-Text .write-text .entrada-texto::placeholder {
+    color: #0A3871;
+}
+.container .input-Text .user-message .message > img{
+    height: 16px;
+    width: 16px;
+}
+.container .input-Text .other-content{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+}
+.container .input-Text .user-message{
+    display: flex;
+    align-items: flex-end;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-left: 20px;
+}
+.container .input-Text .user-message .message{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 5px;
+}
+
+/* I N I C I O -- B O T O N E S */
+.container .input-Text .submit-buttons{
+    grid-row: 2/-1;
+    grid-column: 1/2;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 30px;
+}
+.container .input-Text .submit-buttons .btn-1{
+    width: 280px;
+    height: 55px;
+    border: 1px solid #0000004d;
+    background: #0A3871;
+    border-radius: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+.container .input-Text .submit-buttons .btn-2{
+    width: 280px;
+    height: 55px;
+    border: 1px solid #0000004d;
+    background: #D8DFE8;
+    border-radius: 15px;
+    color: #000;
+    cursor: pointer;
+}
+/* F I N -- B O T O N E S  */
+
+/* I N I C I O -- C L I P B O A R D  */
+.container .clipboard .results,
+.container .clipboard .copy-button{
+    display: none;
+}
+.container .clipboard{
+    background: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 24px;
+    display: grid;
+    height: 690px;
+    grid-template-rows: 400px auto;
+    box-shadow: 0 6px #00000027;
+    grid-column: 3/-1;
+    grid-row: 1/-1;
+}
+.container .clipboard .cb-image{
+    margin-top: 80px;
+    display: flex;
+    place-self: center;
+    grid-row: 1/2;
+}
+.container .clipboard .cb-image > img{
+    width: 336px;
+    height: 304px;
+}
+.container .clipboard .cb-text{
+    display: flex;
+    align-content: center;
+    justify-self: center;
+    flex-direction: column;
+    grid-row: 2/3;
+    width: 336px;
+    height: 122px;
+    text-align: center;
+}
+.container .clipboard .cb-text h2{
+    color: #343A40;
+    font-size: 24px;
+    margin-bottom: 0;
+    margin-top: 50px;
+}
+.container .clipboard .cb-text p{
+    color: #495057;
+    font-size: 16px;
+}
+/* F I N -- C L I P B O A R D  */
+
+/* C L I P B O A R D -- A C T I V E */
+.container .clipboard.active{
+    display: grid;
+    height: 690px;
+    grid-template-rows: 425px auto;
+}
+.container .clipboard.active .cb-image,
+.container .clipboard.active .cb-text{
+    display: none;
+}
+.container .clipboard.active .results{
+    display: flex;
+    grid-row: 1/2;
+    padding: 20px;
+    /* width: 100%; */
+    justify-content: center;
+}
+.container .clipboard.active .results #resultado{
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    outline: none;
+    resize: none;
+}
+.container .clipboard.active .copy-button{
+    display: grid;
+    grid-template-rows: 105px 130px;
+    justify-content: center;
+    /* margin-top: 55px; */
+    grid-row: 2/-1;
+    flex-direction: column;
+}
+.container .clipboard.active .copy-button .copiado{
+    visibility: hidden;
+    /* transition: .1s; */
+    /* position: absolute; */
+    /* bottom: 85px; */
+}
+.container .clipboard.active .copy-button .copiado.active{
+    /* display: none; */
+    width: 100px;
+    height: 45px;
+    display: flex;
+    background: #3e8be9;
+    justify-content: center;
+    border-radius: 20px;
+    align-self: center;
+    align-items: center;
+    justify-self: center;
+    margin-top: 35px;
+    transition: .2s;
+    /* position: absolute; */
+    /* bottom: 85px; */
+    visibility: visible;
+}
+.container .clipboard.active .copy-button .copiado .copied{
+    color: #fff;
+}
+.container .clipboard.active .copy-button .btn-3{
+    width: 280px;
+    height: 55px;
+    border: 1px solid #0000004d;
+    background: #D8DFE8;
+    border-radius: 15px;
+    color: #000;
+    cursor: pointer;
+}
+/* C L I P B O A R D -- A C T I V E */
+
+/* E R R O R -- M E S S A G E */
+.container .error-Message{
+    display: none;
+}
+.container .error-Message.active{
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    z-index: 1;
+    /* max-width: 100vw; */
+    width: 100%;
+    /* min-width: 100vmin; */
+    height: 100vh;
+    background: #ffffff10;
+    backdrop-filter: blur(1px);
+    position: fixed;
+    display: grid;
+}
+.container .error-Message.active .error-content{
+    display: grid;
+    place-self: center;
+    width: 400px;
+    height: 255px;
+    background: #dce1f7;
+    grid-template-columns: auto;
+    grid-template-rows: 95px 100px 50px;
+    border-radius: 15px;
+}
+.container .error-Message.active .error-content .error-img{
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    justify-self: center;
+    align-self: center;
+}
+.container .error-Message.active .error-content .error-text{
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    justify-self: center;
+    align-self: center;
+}
+.container .error-Message.active .error-content .error-text h2{
+    margin-top: 0;
+}
+.container .error-Message.active .error-content .btn-error{
+    grid-column: 1/-1;
+    grid-row: 3/-1;
+    justify-self: end;
+    align-self: center;
+}
+.container .error-Message.active .error-content .btn-error .btn-4{
+    color: #fff;
+    background: #0A3871;
+    height: 30px;
+    width: 60px;
+    margin-right: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/* E R R O R -- M E S S A G E */
